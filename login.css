@@ -24,4 +24,31 @@ body, html{
     color: white;
     font-size: 7px;
     padding: 5px;
+    font-weight: bold;
+}
+label{
+    font-size: 7px;
+    color: rgb(184, 182, 182);
+}
+h1{
+    margin-bottom: 5px;
+}
+h3{
+    color: rgb(184, 182, 182);
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+p{
+    font-size: 7px;
+    color: rgb(184, 182, 182);
+    text-align: center;
+}
+.inputEmail, .inputPass{
+    background-color: rgb(77, 207, 166);
+    color: white;
+    margin-bottom: 15px;
+}
+#iconEmail{
+    padding: 7px;
 }

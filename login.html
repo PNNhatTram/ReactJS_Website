@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/6f8693427d.js" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
 <body>
@@ -12,12 +13,20 @@
         <h3>Welcome to our CMS system</h3>
         <form action="">
             <label for="loginEmail">EMAIL</label><br>
-            <input type="text" name="loginEmail" id="loginEmail"><br><br>
+            <div class="inputEmail">
+                <i class="fa-regular fa-envelope" id="iconEmail"></i>
+                <input type="text" name="loginEmail" id="loginEmail">
+            </div>
+            
             <label for="loginPassword">PASSWORD</label><br>
-            <input type="text" name="loginPassword" id="loginPassword"><br><br>
-            <button type="submit" id="btnLogin"><b>LOGIN</b></button>
+            <div class="inputPass">
+                <i class="fa-solid fa-key" id="passIcon"></i>
+                <input type="text" name="loginPassword" id="loginPassword">  
+            </div>
+            
+            <button type="submit" id="btnLogin">LOGIN</button>
         </form><br>
-        Do you have account? <a href="#">REGISTER HERE</a>
+        <p>Do you have account? <a href="#">REGISTER HERE</a></p>
     </div>   
 </body>
 </html>
