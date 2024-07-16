@@ -29,6 +29,7 @@ body, html{
 label{
     font-size: 7px;
     color: rgb(184, 182, 182);
+    margin: 20px 0px 7px;
 }
 h1{
     margin-bottom: 5px;
@@ -37,18 +38,36 @@ h3{
     color: rgb(184, 182, 182);
     font-weight: normal;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 p{
     font-size: 7px;
     color: rgb(184, 182, 182);
     text-align: center;
 }
+
+.input-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
 .inputEmail, .inputPass{
+    display: flex;
+    align-items: center;
+}
+
+i{
     background-color: rgb(77, 207, 166);
     color: white;
-    margin-bottom: 15px;
-}
-#iconEmail{
     padding: 7px;
 }
+
+input[type=text]{
+    border: none;
+    background-color: rgb(224, 238, 243);
+    padding: 5.5px;
+    width: 100%;
+}
+
