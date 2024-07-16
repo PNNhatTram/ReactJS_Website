@@ -23,7 +23,7 @@ body, html{
     border: none;
     color: white;
     font-size: 7px;
-    padding: 5px;
+    padding: 7px;
     font-weight: bold;
 }
 label{
@@ -33,12 +33,13 @@ label{
 }
 h1{
     margin-bottom: 5px;
+    font-weight: bold;
 }
 h3{
     color: rgb(184, 182, 182);
     font-weight: normal;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 p{
     font-size: 7px;
@@ -66,8 +67,12 @@ i{
 
 input[type=text]{
     border: none;
-    background-color: rgb(224, 238, 243);
-    padding: 5.5px;
+    background-color: rgb(227, 232, 234);
+    padding: 5.3px;
     width: 100%;
+}
+
+a{
+    color:rgb(184, 182, 182);
 }
 
