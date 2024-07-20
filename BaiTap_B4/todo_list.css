@@ -1,5 +1,5 @@
 body,html{
-    background-color: rgb(181, 232, 249);
+    /*background-color: rgb(181, 232, 249);*/
     margin: 0;
     padding: 0;
 }
@@ -18,4 +18,10 @@ li{
 li.completed{
     text-decoration: line-through;
     color: gray;
+}
+li.pending{
+    color: red;
+}
+li.progress{
+    color: yellow;
 }
