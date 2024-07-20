@@ -1,0 +1,17 @@
+body,html{
+    background-color: rgb(181, 232, 249);
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+form{
+    text-align: center;
+}
+li{
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    justify-content: space-between;
+}
