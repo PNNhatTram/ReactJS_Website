@@ -72,6 +72,7 @@ document.getElementById("saveBtn").addEventListener("click", function(event){
         tasks.push(task);
     }
     localStorage.setItem("tasks",JSON.stringify(tasks));
+    saveCategory();
 })
 
 /*TẢI DANH SÁCH TASK TỪ LOCAL STORAGE KHI TRANG ĐƯỢC TẢI*/
@@ -93,6 +94,34 @@ document.getElementById("formCategory").onsubmit=function(event){
         const select = document.getElementById("categorySelect");
         option.value = textCategory;
         option.textContent = textCategory;
+        select.appendChild(option);
+    }
+}
+
+/*HÀM LƯU CÁC DANH MỤC VÀO STORAGE */
+function saveCategory(){
+    const categorys = document.getElementById("categorySelect");
+    // chuyển tất cả các tùy chọn của phần tử <select> thành một mảng
+    const options = Array.from(categorys.options);
+    const optionsData = [];
+    for (const option of options) {
+        optionsData.push({
+            value: option.value,
+            text: option.text,
+            selected: option.selected
+        });
+    }
+    localStorage.setItem('category', JSON.stringify(optionsData));
+}
+
+/*TẢI DANH SÁCH DANH MỤC KHI TRANG ĐƯỢC TẢI */
+const category = JSON.parse(localStorage.getItem("category"));
+if(category){
+    for(let i of category){
+        const option = document.createElement("option");
+        const select = document.getElementById("categorySelect");
+        option.value = i.value;
+        option.textContent = i.text;
         select.appendChild(option);
     }
 }
