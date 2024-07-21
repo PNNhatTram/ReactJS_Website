@@ -1,5 +1,5 @@
 body,html{
-    /*background-color: rgb(181, 232, 249);*/
+    background-color: rgb(181, 232, 249);
     margin: 0;
     padding: 0;
 }
@@ -10,18 +10,65 @@ form{
     text-align: center;
 }
 li{
-    display: flex;
-    border-bottom: 1px solid black;
-    padding: 10px;
-    justify-content: space-between;
+    display: flex; /* Sử dụng Flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Căn chỉnh các phần tử theo chiều ngang */
+    border: 2px solid rgba(13, 81, 228, 0.589);
+    box-sizing: border-box;
+    margin: 7px 0;
+    margin-right: 3%;
+    padding: 15px;
 }
 li.completed{
-    text-decoration: line-through;
-    color: gray;
+    color: green
 }
 li.pending{
     color: red;
 }
-li.progress{
-    color: yellow;
+#removeBtn{
+    background-color: red;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px;
+    border: none;
+    position: fixed;
+    right: 5%;
+}
+#statusSelect{
+    position:fixed;
+    right: calc(5% + 7%);
+}
+#saveBtn{
+    display: inline-block;
+    padding: 7px 15px 7px;
+    background-color: blanchedalmond;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+#addTaskBtn, #addCategoryBtn{
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px;
+    border: none;
+    background-color: rgba(13, 81, 228, 0.589);
+    color: white;
+}
+#inputTask, #inputCategory{
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgba(13, 81, 228, 0.589);
+    padding: 5px;
+    background-color: rgb(181, 232, 249);
+}
+#formTask{
+    margin-bottom: 20px;
+}
+#formCategory{
+    margin-top: 20px;
+}
+select{
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+    border: solid 2px rgba(13, 81, 228, 0.589);
+    background-color: rgb(181, 232, 249);
 }

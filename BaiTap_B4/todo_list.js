@@ -18,17 +18,10 @@ function addTask(task){
     const taskList = document.getElementById("tasks");
     const taskItem = document.createElement("li");
     taskItem.textContent = task.text;
-
-    /*//Nếu task đã hoàn thành, thêm lớp "completed" vào phần tử
-    if(task.status) taskItem.classList.toggle("completed");
-
-    //Thêm sự kiện click để đánh dấu task hoàn thành hoặc chưa hoàn thành.
-    taskItem.addEventListener("click", function(){
-        taskItem.classList.toggle("completed");
-    })*/
     
     //Thêm select status
     const statusSelect = document.createElement("select");
+    statusSelect.id = "statusSelect";
     const options = [
         {value: "pending", text: "Pending"},
         {value: "inProgress", text: "In Progress"},
@@ -45,15 +38,20 @@ function addTask(task){
     //Thêm button remove
     const removeButton = document.createElement("button");
     removeButton.textContent="Remove";
+    removeButton.id="removeBtn";
     removeButton.addEventListener("click", function(){
         taskList.removeChild(taskItem);
     })
 
-    //Thêm lớp trạng thái
-    statusSelect.addEventListener("onchange", function(){
+    // Thiết lập giá trị của select từ task.status đảm bảo khi tải lại, trạng thái task được thiết lập đúng trên select
+    statusSelect.value = task.status;
+    taskItem.classList.add(task.status);
+    // Thêm sự kiện để cập nhật trạng thái khi thay đổi
+    statusSelect.addEventListener("change", function() {
+        taskItem.classList.remove(task.status);
         task.status = statusSelect.value;
-    })
-    taskItem.classList.toggle(task.status);
+        taskItem.classList.add(task.status);
+    });
 
     taskItem.appendChild(statusSelect);
     taskItem.appendChild(removeButton);
@@ -81,5 +79,20 @@ const tasks = JSON.parse(localStorage.getItem("tasks"));
 if(tasks){
     for(let task of tasks){
         addTask(task);
+    }
+}
+
+/*XỬ LÝ SỰ KIỆN NÚT THÊM DANH MỤC*/
+document.getElementById("formCategory").onsubmit=function(event){
+    event.preventDefault();
+    const inputNode = document.getElementById("inputCategory");
+    const textCategory = inputNode.value.trim();
+    if(textCategory!=="")
+    {
+        const option = document.createElement("option");
+        const select = document.getElementById("categorySelect");
+        option.value = textCategory;
+        option.textContent = textCategory;
+        select.appendChild(option);
     }
 }

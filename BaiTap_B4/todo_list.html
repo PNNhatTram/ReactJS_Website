@@ -9,13 +9,29 @@
 </head>
 <body>
     <h1>TO-DO LIST</h1>
-    <form id="formTask">
-        <input id="inputTask" type="text">
-        <button type="submit">Add Task</button>
-        <button id="saveBtn">Save</button>
-    </form>
+    <div class="flex-container">
+        <form id="formTask">
+            <input id="inputTask" type="text">
+            <select id="categorySelect" name="category">
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="study">Study</option>
+            </select>
+            <button id="addTaskBtn" type="submit">ADD TASK</button>
+        </form>
+        
+        <form id="formCategory">
+            <input id="inputCategory" type="text">
+            <button id="addCategoryBtn" type="submit">Add Category</button>
+        </form>
+    </div>
+    
+
     <ul id="tasks">
     </ul>
+
+    <button id="saveBtn">Save</button>
+
     <script src="todo_list.js"></script>
 </body>
 </html>
