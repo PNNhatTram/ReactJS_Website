@@ -78,7 +78,6 @@ document.getElementById("saveBtn").addEventListener("click", function(event){
         tasks.push(task);
     }
     localStorage.setItem("tasks",JSON.stringify(tasks));
-    saveCategory();
 })
 
 /*TẢI DANH SÁCH TASK TỪ LOCAL STORAGE KHI TRANG ĐƯỢC TẢI*/
@@ -94,7 +93,6 @@ function loadTask(){
 
 /*XỬ LÝ SỰ KIỆN NÚT THÊM DANH MỤC*/
 document.getElementById("formCategory").onsubmit = function(event) {
-    event.preventDefault();
     const inputNode = document.getElementById("inputCategory");
     const textCategory = inputNode.value.trim();
     // Kiểm tra trùng lặp
@@ -113,6 +111,7 @@ document.getElementById("formCategory").onsubmit = function(event) {
     option.value = textCategory;
     option.textContent = textCategory;
     select.appendChild(option);
+    saveCategory();
 }
 
 
