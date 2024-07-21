@@ -74,3 +74,6 @@ select{
     border: solid 2px rgba(13, 81, 228, 0.589);
     background-color: rgb(181, 232, 249);
 }
+span{
+    display: none;
+}

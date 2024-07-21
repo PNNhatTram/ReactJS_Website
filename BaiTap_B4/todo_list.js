@@ -8,6 +8,7 @@ document.getElementById("formTask").onsubmit=function(event){
     if(taskText!==""){
         const task = {
             text: taskText,
+            type: "personal",
             status: "pending"
         };
         addTask(task);
@@ -52,7 +53,12 @@ function addTask(task){
         task.status = statusSelect.value;
         taskItem.classList.add(task.status);
     });
+    // Thêm danh mục khi add task
+    const selectType = document.getElementById("categorySelect");
+    const typeValue = document.createElement("span");
+    typeValue.textContent = selectType.value;
 
+    taskItem.appendChild(typeValue);
     taskItem.appendChild(statusSelect);
     taskItem.appendChild(removeButton);
     taskList.appendChild(taskItem);
@@ -66,8 +72,8 @@ document.getElementById("saveBtn").addEventListener("click", function(event){
     for(let taskItem of taskList.getElementsByTagName("li")){
         const task = {
             text: taskItem.childNodes[0].textContent,
-            //Kiểm tra xem phần tử có lớp "completed" không
-            status: taskItem.querySelector("select").value
+            type: taskItem.childNodes[1].textContent,
+            status: taskItem.querySelector("#statusSelect").value
         };
         tasks.push(task);
     }
@@ -132,5 +138,8 @@ if(category){
         option.value = i.value;
         option.textContent = i.text;
         select.appendChild(option);
+
+        const createBtn = document.createElement("button");
+        createBtn.textContent = i.text;
     }
 }
