@@ -77,3 +77,15 @@ select{
 span{
     display: none;
 }
+#navCategory{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navCategory > button{
+    padding: 7px;
+    border: none;
+    background-color: rgba(13, 81, 228, 0.589);
+    color: white;
+    margin: 30px 2px 0;
+}

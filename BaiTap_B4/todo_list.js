@@ -82,12 +82,15 @@ document.getElementById("saveBtn").addEventListener("click", function(event){
 })
 
 /*TẢI DANH SÁCH TASK TỪ LOCAL STORAGE KHI TRANG ĐƯỢC TẢI*/
-const tasks = JSON.parse(localStorage.getItem("tasks"));
-if(tasks){
-    for(let task of tasks){
-        addTask(task);
+function loadTask(){
+    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    if(tasks){
+        for(let task of tasks){
+            addTask(task);
+        }
     }
 }
+
 
 /*XỬ LÝ SỰ KIỆN NÚT THÊM DANH MỤC*/
 document.getElementById("formCategory").onsubmit = function(event) {
@@ -141,5 +144,39 @@ if(category){
 
         const createBtn = document.createElement("button");
         createBtn.textContent = i.text;
+        createBtn.className = "categoryButton";
+        const parentNode = document.getElementById("navCategory");
+        parentNode.appendChild(createBtn);
     }
 }
+
+/*SHOW CÁC TASK THEO DANH MỤC*/
+// Lấy tất cả các nút bằng cách chọn lớp
+function showTasksByCategory(category) {
+    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    const taskList = document.getElementById("tasks");
+    taskList.innerHTML = ""; // Xóa tất cả task hiện có
+    if (tasks) {
+        if (category === "all") {
+            for (let task of tasks) {
+                addTask(task);
+            }
+        } else {
+            for (let task of tasks) {
+                if (task.type === category) {
+                    addTask(task);
+                }
+            }
+        }
+    }
+}
+
+document.getElementById("navCategory").addEventListener("click", function(event) {
+    if (event.target && event.target.classList.contains("categoryButton")) {
+        const category = event.target.textContent;
+        showTasksByCategory(category === "All" ? "all" : category);
+    }
+});
+
+// Gọi loadTask khi trang được tải
+window.onload = loadTask;
