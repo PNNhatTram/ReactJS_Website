@@ -31,12 +31,12 @@ li.pending{
     border-radius: 10px 10px 10px 10px;
     padding: 7px;
     border: none;
-    position: fixed;
+    position: static;
     right: 5%;
+    margin-left: 2%;
 }
 #statusSelect{
-    position:fixed;
-    right: calc(5% + 7%);
+    margin-left: auto;
 }
 #saveBtn{
     display: inline-block;
@@ -44,8 +44,10 @@ li.pending{
     background-color: blanchedalmond;
     font-weight: bold;
     font-size: 15px;
-    margin: 10px;
     border-radius: 10px 10px 10px 10px;
+    margin-left: 3%;
+    margin-bottom: 3%;
+    width: 15%;
 }
 #addTaskBtn, #addCategoryBtn{
     border-radius: 10px 10px 10px 10px;
