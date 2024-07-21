@@ -84,19 +84,28 @@ if(tasks){
 }
 
 /*XỬ LÝ SỰ KIỆN NÚT THÊM DANH MỤC*/
-document.getElementById("formCategory").onsubmit=function(event){
+document.getElementById("formCategory").onsubmit = function(event) {
     event.preventDefault();
     const inputNode = document.getElementById("inputCategory");
     const textCategory = inputNode.value.trim();
-    if(textCategory!=="")
-    {
-        const option = document.createElement("option");
-        const select = document.getElementById("categorySelect");
-        option.value = textCategory;
-        option.textContent = textCategory;
-        select.appendChild(option);
+    // Kiểm tra trùng lặp
+    const categorys = document.getElementById("categorySelect");
+    // Chuyển tất cả các tùy chọn của phần tử <select> thành một mảng
+    const options = Array.from(categorys.options);
+    const optionsData = [];
+    for (let i of options) {
+        if (textCategory === i.textContent) {
+            alert("Please enter again!!!");
+            return; // Dừng vòng lặp và thoát khỏi hàm khi có alert
+        }
     }
+    const option = document.createElement("option");
+    const select = document.getElementById("categorySelect");
+    option.value = textCategory;
+    option.textContent = textCategory;
+    select.appendChild(option);
 }
+
 
 /*HÀM LƯU CÁC DANH MỤC VÀO STORAGE */
 function saveCategory(){
