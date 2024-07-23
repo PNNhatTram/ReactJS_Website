@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(181, 232, 249);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  border-radius: 10px;
+  border: 1px solid rgba(13, 81, 228, 0.589);
+  padding: 12px;
+  margin: 5px;
+  background-color: rgb(181, 232, 249);
+}
+
+

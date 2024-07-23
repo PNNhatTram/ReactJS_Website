@@ -1,0 +1,13 @@
+.addbtn {
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(13, 81, 228, 0.589);
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+  
+.addbtn:hover {
+    background-color: black;
+}
+  
